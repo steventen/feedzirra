@@ -25,8 +25,7 @@ module Feedzirra
     end
 
     def update_from_feed(feed)
-      self.new_entries = []
-      self.new_entries += find_new_entries_for(feed)
+      self.new_entries = find_new_entries_for(feed)
       self.entries.unshift(*self.new_entries)
 
       @updated = false
